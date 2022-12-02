@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://kserve.io/website/master/modelserving/v1beta1/torchserve/">
       
       <link rel="icon" href="../../../images/favicon/favicon-32x32.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.0.5">
     
     
       
@@ -21,20 +21,19 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.c382b1dc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.a617204b.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cc9b2e1e.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.9204c3b2.min.css">
         
       
     
     
     
       
-        
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
@@ -65,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#deploy-pytorch-model-with-torchserve-inferenceservice" class="md-skip">
+        <a href="#deploy-a-pytorch-model-with-torchserve-inferenceservice" class="md-skip">
           Skip to content
         </a>
       
@@ -76,8 +75,7 @@
           <div class="md-banner__inner md-grid md-typeset">
             
  <h1>
-
-    <a href="http://kserve-survey.com/"><b>KServe User Survey</b></a>
+   <b>KServe v0.9 is Released</b>, <a href="/website/0.9/blog/articles/2022-07-21-KServe-0.9-release/">Read blog &gt;&gt;</a>
  </h1>
 
           </div>
@@ -104,7 +102,7 @@
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -126,7 +124,7 @@
     
     
       <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
       </label>
       <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
@@ -134,13 +132,13 @@
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
         
         <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
         </button>
       </nav>
       
@@ -163,7 +161,7 @@
         <a href="https://github.com/kserve/website" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -220,11 +218,18 @@
   
   
   
+    
+
+  
+  
+  
     <li class="md-tabs__item">
-      <a href="../../../admin/serverless/" class="md-tabs__link">
+      <a href="../../../admin/serverless/serverless/" class="md-tabs__link">
         Administration Guide
       </a>
     </li>
+  
+
   
 
   
@@ -308,7 +313,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../blog/articles/2022-02-18-KServe-0.8-release/" class="md-tabs__link">
+      <a href="../../../blog/articles/2022-07-21-KServe-0.9-release/" class="md-tabs__link">
         Blog
       </a>
     </li>
@@ -372,7 +377,7 @@
       <a href="https://github.com/kserve/website" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -518,10 +523,71 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1_1" type="checkbox" id="__nav_3_1_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_1">
+          Serverless
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Serverless" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          Serverless
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../../admin/serverless/" class="md-nav__link">
+      <a href="../../../admin/serverless/serverless/" class="md-nav__link">
         Serverless installation
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../admin/serverless/servicemesh/" class="md-nav__link">
+        Istio Service Mesh
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../admin/serverless/kourier_networking/" class="md-nav__link">
+        Kourier Networking Layer
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -891,18 +957,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#creating-model-storage-with-model-archive-and-config-file" class="md-nav__link">
-    Creating model storage with model archive and config file
+  <a href="#create-model-storage-with-a-model-archive-file-and-config" class="md-nav__link">
+    Create Model Storage with a Model Archive File and Config
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#deploy-pytorch-model-with-v1-rest-protocol" class="md-nav__link">
-    Deploy PyTorch model with V1 REST Protocol
+    Deploy PyTorch Model with V1 REST Protocol
   </a>
   
-    <nav class="md-nav" aria-label="Deploy PyTorch model with V1 REST Protocol">
+    <nav class="md-nav" aria-label="Deploy PyTorch Model with V1 REST Protocol">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1029,7 +1095,7 @@
         
           <li class="md-nav__item">
   <a href="#create-inferenceservice-with-canary-model" class="md-nav__link">
-    Create InferenceService with canary model
+    Create InferenceService with Canary Model
   </a>
   
 </li>
@@ -1050,7 +1116,7 @@
         
           <li class="md-nav__item">
   <a href="#rollback-the-model" class="md-nav__link">
-    Rollback the model
+    Rollback the Model
   </a>
   
 </li>
@@ -1139,7 +1205,7 @@
   
     <li class="md-nav__item">
       <a href="../lightgbm/" class="md-nav__link">
-        Lightgbm
+        LightGBM
       </a>
     </li>
   
@@ -1154,6 +1220,20 @@
     <li class="md-nav__item">
       <a href="../paddle/" class="md-nav__link">
         Paddle
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mlflow/v2/" class="md-nav__link">
+        MLFlow
       </a>
     </li>
   
@@ -1249,6 +1329,20 @@
           
         </ul>
       </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../amd/" class="md-nav__link">
+        AMD
+      </a>
     </li>
   
 
@@ -1452,12 +1546,73 @@
       
       
         <label class="md-nav__link" for="__nav_4_5">
+          Inference Graph
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Inference Graph" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          Inference Graph
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inference_graph/" class="md-nav__link">
+        Concept
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inference_graph/image_pipeline/" class="md-nav__link">
+        Image classification inference graph
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_6" type="checkbox" id="__nav_4_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_6">
           Model Storage
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Model Storage" data-md-level="2">
-        <label class="md-nav__title" for="__nav_4_5">
+        <label class="md-nav__title" for="__nav_4_6">
           <span class="md-nav__icon md-icon"></span>
           Model Storage
         </label>
@@ -1535,18 +1690,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_6" type="checkbox" id="__nav_4_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_7" type="checkbox" id="__nav_4_7" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_4_6">
+        <label class="md-nav__link" for="__nav_4_7">
           Model Explainability
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Model Explainability" data-md-level="2">
-        <label class="md-nav__title" for="__nav_4_6">
+        <label class="md-nav__title" for="__nav_4_7">
           <span class="md-nav__icon md-icon"></span>
           Model Explainability
         </label>
@@ -1575,18 +1730,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_6_2" type="checkbox" id="__nav_4_6_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_7_2" type="checkbox" id="__nav_4_7_2" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_4_6_2">
+        <label class="md-nav__link" for="__nav_4_7_2">
           Alibi Explainer
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Alibi Explainer" data-md-level="3">
-        <label class="md-nav__title" for="__nav_4_6_2">
+        <label class="md-nav__title" for="__nav_4_7_2">
           <span class="md-nav__icon md-icon"></span>
           Alibi Explainer
         </label>
@@ -1671,18 +1826,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_7" type="checkbox" id="__nav_4_7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_8" type="checkbox" id="__nav_4_8" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_4_7">
+        <label class="md-nav__link" for="__nav_4_8">
           Model Monitoring
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Model Monitoring" data-md-level="2">
-        <label class="md-nav__title" for="__nav_4_7">
+        <label class="md-nav__title" for="__nav_4_8">
           <span class="md-nav__icon md-icon"></span>
           Model Monitoring
         </label>
@@ -1723,7 +1878,7 @@
   
     <li class="md-nav__item">
       <a href="../../detect/art/mnist/" class="md-nav__link">
-        ART Adversial Detector
+        ART Adversarial Detector
       </a>
     </li>
   
@@ -1746,18 +1901,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_8" type="checkbox" id="__nav_4_8" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_9" type="checkbox" id="__nav_4_9" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_4_8">
+        <label class="md-nav__link" for="__nav_4_9">
           Request Batching
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Request Batching" data-md-level="2">
-        <label class="md-nav__title" for="__nav_4_8">
+        <label class="md-nav__title" for="__nav_4_9">
           <span class="md-nav__icon md-icon"></span>
           Request Batching
         </label>
@@ -1793,18 +1948,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_9" type="checkbox" id="__nav_4_9" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_10" type="checkbox" id="__nav_4_10" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_4_9">
+        <label class="md-nav__link" for="__nav_4_10">
           Payload Logging
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Payload Logging" data-md-level="2">
-        <label class="md-nav__title" for="__nav_4_9">
+        <label class="md-nav__title" for="__nav_4_10">
           <span class="md-nav__icon md-icon"></span>
           Payload Logging
         </label>
@@ -1840,18 +1995,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_10" type="checkbox" id="__nav_4_10" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_11" type="checkbox" id="__nav_4_11" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_4_10">
+        <label class="md-nav__link" for="__nav_4_11">
           Autoscaling
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Autoscaling" data-md-level="2">
-        <label class="md-nav__title" for="__nav_4_10">
+        <label class="md-nav__title" for="__nav_4_11">
           <span class="md-nav__icon md-icon"></span>
           Autoscaling
         </label>
@@ -1887,18 +2042,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_11" type="checkbox" id="__nav_4_11" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_12" type="checkbox" id="__nav_4_12" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_4_11">
+        <label class="md-nav__link" for="__nav_4_12">
           Node Scheduling
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Node Scheduling" data-md-level="2">
-        <label class="md-nav__title" for="__nav_4_11">
+        <label class="md-nav__title" for="__nav_4_12">
           <span class="md-nav__icon md-icon"></span>
           Node Scheduling
         </label>
@@ -1948,18 +2103,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_12" type="checkbox" id="__nav_4_12" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_13" type="checkbox" id="__nav_4_13" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_4_12">
+        <label class="md-nav__link" for="__nav_4_13">
           Kafka
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Kafka" data-md-level="2">
-        <label class="md-nav__title" for="__nav_4_12">
+        <label class="md-nav__title" for="__nav_4_13">
           <span class="md-nav__icon md-icon"></span>
           Kafka
         </label>
@@ -1972,7 +2127,7 @@
   
     <li class="md-nav__item">
       <a href="../../kafka/kafka/" class="md-nav__link">
-        Inference Kafka
+        Inference with Kafka event source
       </a>
     </li>
   
@@ -1995,18 +2150,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_13" type="checkbox" id="__nav_4_13" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_14" type="checkbox" id="__nav_4_14" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_4_13">
+        <label class="md-nav__link" for="__nav_4_14">
           Rollout Strategies
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Rollout Strategies" data-md-level="2">
-        <label class="md-nav__title" for="__nav_4_13">
+        <label class="md-nav__title" for="__nav_4_14">
           <span class="md-nav__icon md-icon"></span>
           Rollout Strategies
         </label>
@@ -2237,6 +2392,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../blog/articles/2022-07-21-KServe-0.9-release/" class="md-nav__link">
+        KServe 0.9 Release
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../blog/articles/2022-02-18-KServe-0.8-release/" class="md-nav__link">
         KServe 0.8 Release
       </a>
@@ -2408,18 +2577,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#creating-model-storage-with-model-archive-and-config-file" class="md-nav__link">
-    Creating model storage with model archive and config file
+  <a href="#create-model-storage-with-a-model-archive-file-and-config" class="md-nav__link">
+    Create Model Storage with a Model Archive File and Config
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#deploy-pytorch-model-with-v1-rest-protocol" class="md-nav__link">
-    Deploy PyTorch model with V1 REST Protocol
+    Deploy PyTorch Model with V1 REST Protocol
   </a>
   
-    <nav class="md-nav" aria-label="Deploy PyTorch model with V1 REST Protocol">
+    <nav class="md-nav" aria-label="Deploy PyTorch Model with V1 REST Protocol">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2546,7 +2715,7 @@
         
           <li class="md-nav__item">
   <a href="#create-inferenceservice-with-canary-model" class="md-nav__link">
-    Create InferenceService with canary model
+    Create InferenceService with Canary Model
   </a>
   
 </li>
@@ -2567,7 +2736,7 @@
         
           <li class="md-nav__item">
   <a href="#rollback-the-model" class="md-nav__link">
-    Rollback the model
+    Rollback the Model
   </a>
   
 </li>
@@ -2596,29 +2765,27 @@
             <article class="md-content__inner md-typeset">
               
                 
-  <a href="https://github.com/kserve/website/edit/mkdocs/docs/modelserving/v1beta1/torchserve/README.md" title="Edit this page" class="md-content__button md-icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
-  </a>
+<a href="https://github.com/kserve/website/edit/main/docs/modelserving/v1beta1/torchserve/README.md" title="Edit this page" class="md-content__button md-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+</a>
 
 
-
-<h1 id="deploy-pytorch-model-with-torchserve-inferenceservice">Deploy PyTorch model with TorchServe InferenceService<a class="headerlink" href="#deploy-pytorch-model-with-torchserve-inferenceservice" title="Permanent link">&para;</a></h1>
-<p>In this example, we deploy a trained PyTorch mnist model to predict handwritten digits by running an <code>InferenceService</code> with <a href="https://github.com/pytorch/serve">TorchServe runtime</a> which is the default installed serving runtime for PyTorch models. Model interpretability is also an important aspect which helps to understand which of the input features were important for a particular classification. 
-<a href="https://captum.ai">Captum</a> is a model interpretability library, in this example TorchServe <strong>explain</strong> endpoint implements with the Captum's state-of-the-art algorithm, including integrated gradients to provide user with an easy way to understand which features are contributing to the model output. You can refer to <a href="https://captum.ai/tutorials/">Captum Tutorial</a> for more examples.</p>
-<h2 id="creating-model-storage-with-model-archive-and-config-file">Creating model storage with model archive and config file<a class="headerlink" href="#creating-model-storage-with-model-archive-and-config-file" title="Permanent link">&para;</a></h2>
-<p>The KServe/TorchServe integration expects following model store layout on the storage with <strong>TorchServe Model Archive</strong> and <strong>Model Configuration</strong>.</p>
+<h1 id="deploy-a-pytorch-model-with-torchserve-inferenceservice">Deploy a PyTorch Model with TorchServe InferenceService<a class="headerlink" href="#deploy-a-pytorch-model-with-torchserve-inferenceservice" title="Permanent link">&para;</a></h1>
+<p>In this example, we deploy a trained PyTorch MNIST model to predict handwritten digits by running an <code>InferenceService</code> with <a href="https://github.com/pytorch/serve">TorchServe runtime</a> which is the default installed serving runtime for PyTorch models. Model interpretability is also an important aspect which helps to understand which of the input features were important for a particular classification. 
+<a href="https://captum.ai">Captum</a> is a model interpretability library. In this example, TorchServe <strong>explain</strong> endpoint is implemented with Captum's state-of-the-art algorithm, including integrated gradients to provide users with an easy way to understand which features are contributing to the model output. You can refer to the <a href="https://captum.ai/tutorials/">Captum Tutorial</a> for more examples.</p>
+<h2 id="create-model-storage-with-a-model-archive-file-and-config">Create Model Storage with a Model Archive File and Config<a class="headerlink" href="#create-model-storage-with-a-model-archive-file-and-config" title="Permanent link">&para;</a></h2>
+<p>The KServe/TorchServe integration expects following model store layout.</p>
 <div class="highlight"><pre><span></span><code>├── config
 │   ├── config.properties
 ├── model-store
 │   ├── densenet_161.mar
 │   ├── mnist.mar
 </code></pre></div>
-<p>TorchServe provides a utility to package all the model artifacts into a single <a href="https://github.com/pytorch/serve/blob/master/model-archiver/README.md">TorchServe Model Archive Files (MAR)</a>, after model artifacts are packaged into MAR file you then upload to the <strong>model-store</strong> under model storage path.</p>
-<p>You can store your model and dependent files on remote storage or local persistent volume, the mnist model and dependent files can be obtained
-from <a href="https://github.com/pytorch/serve/tree/master/examples/image_classifier/mnist">here</a>.</p>
+<p>TorchServe provides a utility to package all the model artifacts into a single <a href="https://github.com/pytorch/serve/blob/master/model-archiver/README.md">TorchServe Model Archive File (MAR)</a>. After model artifacts are packaged into a MAR file, you then upload to the <strong>model-store</strong> under the model storage path.</p>
+<p>You can store your model and dependent files on remote storage or local persistent volume. The MNIST model and dependent files can be obtained from <a href="https://github.com/pytorch/serve/tree/master/examples/image_classifier/mnist">here</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>For remote storage you can choose to start the example using the prebuilt mnist MAR file stored on KServe example GCS bucket
+<p>For remote storage you can choose to start the example using the prebuilt MNIST MAR file stored on KServe example GCS bucket
 <code>gs://kfserving-examples/models/torchserve/image_classifier</code>, or generate the MAR file with <code>torch-model-archiver</code> and 
 create the model store on remote storage according to the above layout.</p>
 <div class="highlight"><pre><span></span><code>torch-model-archiver --model-name mnist --version <span class="m">1</span>.0 <span class="se">\</span>
@@ -2629,7 +2796,7 @@ create the model store on remote storage according to the above layout.</p>
 <p>For PVC user please refer to <a href="model-archiver/">model archive file generation</a> for auto generation of MAR files with
 the model and dependent files.</p>
 </div>
-<p>TorchServe uses a <strong>config.properties</strong> file to store configuration, please see <a href="https://pytorch.org/serve/configuration.html#config-properties-file">here</a> for more details with the properties supported on the configuration file and following is an sample file for KServe.</p>
+<p>TorchServe uses a <strong>config.properties</strong> file to store configuration. Please see <a href="https://pytorch.org/serve/configuration.html#config-properties-file">here</a> for more details with the properties supported by the configuration file. The following is an sample file for KServe:</p>
 <div class="highlight"><pre><span></span><code>inference_address=http://0.0.0.0:8085
 management_address=http://0.0.0.0:8085
 metrics_address=http://0.0.0.0:8082
@@ -2642,16 +2809,16 @@ job_queue_size=10
 enable_envvars_config=true
 install_py_dep_per_model=true
 model_store=/mnt/models/model-store
-model_snapshot={&quot;name&quot;:&quot;startup.cfg&quot;,&quot;modelCount&quot;:1,&quot;models&quot;:{&quot;mnist&quot;:{&quot;1.0&quot;:{&quot;defaultVersion&quot;:true,&quot;marName&quot;:&quot;mnist.mar&quot;,&quot;minWorkers&quot;:1,&quot;maxWorkers&quot;:5,&quot;batchSize&quot;:1,&quot;responseTimeout&quot;:120}}}}
+model_snapshot={&quot;name&quot;:&quot;startup.cfg&quot;,&quot;modelCount&quot;:1,&quot;models&quot;:{&quot;mnist&quot;:{&quot;1.0&quot;:{&quot;defaultVersion&quot;:true,&quot;marName&quot;:&quot;mnist.mar&quot;,&quot;minWorkers&quot;:1,&quot;maxWorkers&quot;:5,&quot;batchSize&quot;:1,&quot;maxBatchDelay&quot;:10,&quot;responseTimeout&quot;:120}}}}
 </code></pre></div>
-<p>The KServe/TorchServe integration supports KServe v1/v2 REST protocol, in the <code>config.properties</code> we need to turn on the flag <code>enable_envvars_config</code> to enable setting the kserve envelop using environment variable.</p>
+<p>The KServe/TorchServe integration supports KServe v1/v2 REST protocol. In the <code>config.properties</code>, we need to turn on the flag <code>enable_envvars_config</code> to enable setting the KServe envelop using an environment variable.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>The previous <code>service_envelope</code> property has beed deprecated and in the <a href="config.properties">config.properties</a> file use the flag <code>enable_envvars_config=true</code> to enable setting the service envelope at runtime.
 The requests are converted from KServe inference request format to TorchServe request format and sent to the <code>inference_address</code> configured
 via local socket.</p>
 </div>
-<h2 id="deploy-pytorch-model-with-v1-rest-protocol">Deploy PyTorch model with V1 REST Protocol<a class="headerlink" href="#deploy-pytorch-model-with-v1-rest-protocol" title="Permanent link">&para;</a></h2>
+<h2 id="deploy-pytorch-model-with-v1-rest-protocol">Deploy PyTorch Model with V1 REST Protocol<a class="headerlink" href="#deploy-pytorch-model-with-v1-rest-protocol" title="Permanent link">&para;</a></h2>
 <h3 id="create-the-torchserve-inferenceservice">Create the TorchServe InferenceService<a class="headerlink" href="#create-the-torchserve-inferenceservice" title="Permanent link">&para;</a></h3>
 <p>KServe by default selects the <code>TorchServe</code> runtime when you specify the model format <code>pytorch</code> on new model spec.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Old Schema</label><label for="__tabbed_1_2">New Schema</label></div>
@@ -2738,7 +2905,7 @@ via local socket.</p>
 <div class="highlight"><pre><span></span><code><span class="nv">$inferenceservice</span>.serving.kserve.io/torchserve created
 </code></pre></div>
 <h3 id="model-inference">Model Inference<a class="headerlink" href="#model-inference" title="Permanent link">&para;</a></h3>
-<p>The first step is to <a href="../../../get_started/first_isvc/#3-determine-the-ingress-ip-and-ports">determine the ingress IP and ports</a> and set <code>INGRESS_HOST</code> and <code>INGRESS_PORT</code>.</p>
+<p>The first step is to <a href="../../../get_started/first_isvc/#4-determine-the-ingress-ip-and-ports">determine the ingress IP and ports</a> and set <code>INGRESS_HOST</code> and <code>INGRESS_PORT</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="nv">MODEL_NAME</span><span class="o">=</span>mnist
 <span class="nv">SERVICE_HOSTNAME</span><span class="o">=</span><span class="k">$(</span>kubectl get inferenceservice torchserve -o <span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.status.url}&#39;</span> <span class="p">|</span> cut -d <span class="s2">&quot;/&quot;</span> -f <span class="m">3</span><span class="k">)</span>
 </code></pre></div>
@@ -2823,7 +2990,7 @@ To enable v2 inference protocol, specify the <code>protocolVersion</code> field 
 <div class="highlight"><pre><span></span><code><span class="nv">$inferenceservice</span>.serving.kserve.io/torchserve-mnist-v2 created
 </code></pre></div></p>
 <h3 id="model-inference_1">Model Inference<a class="headerlink" href="#model-inference_1" title="Permanent link">&para;</a></h3>
-<p>The first step is to <a href="../../../get_started/first_isvc/#3-determine-the-ingress-ip-and-ports">determine the ingress IP and ports</a> and set <code>INGRESS_HOST</code> and <code>INGRESS_PORT</code>.</p>
+<p>The first step is to <a href="../../../get_started/first_isvc/#4-determine-the-ingress-ip-and-ports">determine the ingress IP and ports</a> and set <code>INGRESS_HOST</code> and <code>INGRESS_PORT</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="nv">MODEL_NAME</span><span class="o">=</span>mnist
 <span class="nv">SERVICE_HOSTNAME</span><span class="o">=</span><span class="k">$(</span>kubectl get inferenceservice torchserve-mnist-v2 -o <span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.status.url}&#39;</span> <span class="p">|</span> cut -d <span class="s2">&quot;/&quot;</span> -f <span class="m">3</span><span class="k">)</span>
 </code></pre></div>
@@ -2851,14 +3018,13 @@ curl -v -H <span class="s2">&quot;Host: </span><span class="si">${</span><span c
 </code></pre></div></p>
 <h2 id="autoscaling">Autoscaling<a class="headerlink" href="#autoscaling" title="Permanent link">&para;</a></h2>
 <p>One of the main serverless inference features is to automatically scale the replicas of an <code>InferenceService</code> matching the incoming workload.
-KServe by default enables <a href="https://knative.dev/docs/serving/autoscaling/">Knative Pod Autoscaler</a> which watches traffic flow and scales up and down
-based on the configured metrics.</p>
+KServe by default enables <a href="https://knative.dev/docs/serving/autoscaling/">Knative Pod Autoscaler</a> which watches traffic flow and scales up and down based on the configured metrics.</p>
 <h3 id="knative-autoscaler">Knative Autoscaler<a class="headerlink" href="#knative-autoscaler" title="Permanent link">&para;</a></h3>
 <p>KServe supports the implementation of <strong>Knative Pod Autoscaler (KPA)</strong> and <strong>Kubernetes’ Horizontal Pod Autoscaler (HPA)</strong>.
 The features and limitations of each of these Autoscalers are listed below.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If you want to use Kubernetes Horizontal Pod Autoscaler (HPA), you must install <a href="https://knative.dev/docs/install/any-kubernetes-cluster/#optional-serving-extensions">HPA extension</a></p>
+<p>If you want to use Kubernetes Horizontal Pod Autoscaler (HPA), you must install <a href="https://knative.dev/docs/install/yaml-install/serving/install-serving-with-yaml/#install-optional-serving-extensions">HPA extension</a></p>
 </div>
 <p>Knative Pod Autoscaler (KPA)</p>
 <ul>
@@ -2908,7 +3074,7 @@ a strictly enforced bound, particularly if there is a sudden burst of requests, 
 </div>
 </div>
 </div>
-<p>You can also configure InferenceService with field <code>containerConcurrency</code> for a hard limit. The hard limit is an enforced upper bound. 
+<p>You can also configure InferenceService with field <code>containerConcurrency</code> with a hard limit. The hard limit is an enforced upper bound. 
 If concurrency reaches the hard limit, surplus requests will be buffered and must wait until enough capacity is free to execute the requests.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">Old Schema</label><label for="__tabbed_8_2">New Schema</label></div>
 <div class="tabbed-content">
@@ -2940,7 +3106,7 @@ If concurrency reaches the hard limit, surplus requests will be buffered and mus
 </div>
 </div>
 </div>
-<p>After specifying the soft or hard limits of the scaling target, you can now deploy the <code>InferenceService</code> with <a href="./autoscale/autoscaling.yaml">autoscaling.yaml</a>.</p>
+<p>After specifying the soft or hard limits of the scaling target, you can now deploy the <code>InferenceService</code> with <a href="autoscaling/autoscaling.yaml">autoscaling.yaml</a>.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="9:1"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">kubectl</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block"></div>
@@ -2971,8 +3137,8 @@ torchserve-predictor-default-cj2d8-deployment-69444c9c74-vvpjl   <span class="m"
 torchserve-predictor-default-cj2d8-deployment-69444c9c74-xvn7t   <span class="m">2</span>/2     Terminating   <span class="m">0</span>          103s
 </code></pre></div>
 <h2 id="canary-rollout">Canary Rollout<a class="headerlink" href="#canary-rollout" title="Permanent link">&para;</a></h2>
-<p>Canary rollout is a deployment strategy when you can release a new version of model to a small percent of the production traffic.</p>
-<h3 id="create-inferenceservice-with-canary-model">Create InferenceService with canary model<a class="headerlink" href="#create-inferenceservice-with-canary-model" title="Permanent link">&para;</a></h3>
+<p>Canary rollout is a deployment strategy when you release a new version of model to a small percent of the production traffic.</p>
+<h3 id="create-inferenceservice-with-canary-model">Create InferenceService with Canary Model<a class="headerlink" href="#create-inferenceservice-with-canary-model" title="Permanent link">&para;</a></h3>
 <p>After the above experiments, now let's see how you can rollout a new model without moving full traffic to the new model by default.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">Old Schema</label><label for="__tabbed_10_2">New Schema</label></div>
 <div class="tabbed-content">
@@ -3124,7 +3290,7 @@ torchserve-predictor-default-00002-deployment-c6fcc65dd-rjknq    <span class="m"
 <span class="w">  </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div></p>
-<h3 id="rollback-the-model">Rollback the model<a class="headerlink" href="#rollback-the-model" title="Permanent link">&para;</a></h3>
+<h3 id="rollback-the-model">Rollback the Model<a class="headerlink" href="#rollback-the-model" title="Permanent link">&para;</a></h3>
 <p>In case the new model version does not work after the traffic is moved to the new revision, you can still patch the <strong>canaryTrafficPercent to 0</strong>  and move the traffic back to the previously rolled model which is <strong>torchserve-predictor-default-00001</strong>.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="14:1"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><div class="tabbed-labels"><label for="__tabbed_14_1">kubectl</label></div>
 <div class="tabbed-content">
@@ -3167,7 +3333,7 @@ torchserve-predictor-default-00002-deployment-c6fcc65dd-rjknq    <span class="m"
 <span class="p">}</span><span class="w"></span>
 </code></pre></div></p>
 <h2 id="monitoring">Monitoring<a class="headerlink" href="#monitoring" title="Permanent link">&para;</a></h2>
-<p><a href="metrics/">Expose metrics and setup grafana dashboards</a></p>
+<p><a href="metrics/">Metrics Exposure and Grafana Dashboard Setup</a></p>
 
               
             </article>
@@ -3175,7 +3341,7 @@ torchserve-predictor-default-00002-deployment-c6fcc65dd-rjknq    <span class="m"
         </div>
         
           <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
             Back to top
           </a>
         
@@ -3188,7 +3354,7 @@ torchserve-predictor-default-00002-deployment-c6fcc65dd-rjknq    <span class="m"
         
         <a href="../tensorflow/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Tensorflow" rel="prev">
           <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
           <div class="md-footer__title">
             <div class="md-ellipsis">
@@ -3212,7 +3378,7 @@ torchserve-predictor-default-00002-deployment-c6fcc65dd-rjknq    <span class="m"
             </div>
           </div>
           <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
           </div>
         </a>
       
@@ -3239,13 +3405,13 @@ torchserve-predictor-default-00002-deployment-c6fcc65dd-rjknq    <span class="m"
     
     
     <a href="https://github.com/kserve" target="_blank" rel="noopener" title="KServe Community on Github" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
     </a>
   
     
     
     <a href="https://kubeflow.slack.com/join/shared_invite/zt-n73pfj05-l206djXlXk5qdQKs4o1Zkg#" target="_blank" rel="noopener" title="Slack" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"/></svg>
     </a>
   
 </div>
@@ -3258,10 +3424,10 @@ torchserve-predictor-default-00002-deployment-c6fcc65dd-rjknq    <span class="m"
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tracking", "navigation.tabs.sticky", "navigation.top"], "search": "../../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tracking", "navigation.tabs.sticky", "navigation.top"], "search": "../../../assets/javascripts/workers/search.cefbb252.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.a6c66575.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.a5f8ea78.min.js"></script>
       
     
   </body>
